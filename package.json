@@ -1,7 +1,7 @@
 {
-  "name": "send-email-service",
+  "name": "marketing-service",
   "version": "1.0.0",
-  "description": "Service responsible for sending emails to customers",
+  "description": "Marketing integrations service",
   "scripts": {
     "start": "tsx src/server.ts",
     "test": "jest",
