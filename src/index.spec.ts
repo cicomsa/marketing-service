@@ -26,13 +26,7 @@ jest.mock("./adapters/sendEmail", () => {
   };
 });
 
-jest.mock("./actions/sendEmail", () => {
-  const original = jest.requireActual("./actions/sendEmail");
-  return {
-    ...original,
-    sendEmail: jest.fn(),
-  };
-});
+jest.mock("./actions/sendEmail");
 
 const mockSendEmail = sendEmail as jest.Mock;
 
@@ -77,7 +71,6 @@ describe("GET /events", () => {
     });
 
     it("should return 200 and call the sendEmail adapter when event is email trigger", async () => {
-      jest.setTimeout(1500000);
       const eventName = "event1";
       const userEmail = "test@example.com";
 
@@ -100,8 +93,14 @@ describe("GET /events", () => {
       expect(mockSendEmail).toHaveBeenCalledTimes(
         mockEmailsConfig[eventName].length,
       );
-      // expect(sendEmail).toHaveBeenNthCalledWith(1, mockSend, mockEmailsConfig[eventName][0].delayTime, userEmail);
-      expect(mockSendEmail).toHaveBeenLastCalledWith(
+      expect(mockSendEmail).toHaveBeenNthCalledWith(
+        1,
+        send as jest.Mock,
+        mockEmailsConfig[eventName][1].delayTime,
+        userEmail,
+      );
+      expect(mockSendEmail).toHaveBeenNthCalledWith(
+        2,
         send as jest.Mock,
         mockEmailsConfig[eventName][0].delayTime,
         userEmail,
