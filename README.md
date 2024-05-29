@@ -4,7 +4,7 @@
 
 Author: [Ioana Comsa](mailto:ioanacomsa85@gmail.com)
 
-[Video](https://www.loom.com/share/a8ec1027c2dd4418bbb8cb1201b3ffbf) overview on what to expect in the readme file and when running the application.
+[Video](https://www.loom.com/share/a8ec1027c2dd4418bbb8cb1201b3ffbf?sid=03409da4-eb5a-47fc-b881-6cc81a09a11b) overview on what to expect in the readme file and when running the application.
 
 ## Proposed Solution
 
