@@ -43,22 +43,27 @@ Author: [Ioana Comsa](mailto:ioanacomsa85@gmail.com)
 
 ## Screenshots
 
-Happy path - flow 1
+#### Happy path - flow 1
+
 ![alt text](assets/flow1a.png)
 ![alt text](assets/flow1b.png)
 
-Happy path - flow 2
+#### Happy path - flow 2
+
 ![alt text](assets/flow2a.png)
 ![alt text](assets/flow2b.png)
 
-Unhappy path - flow 1
+#### Unhappy path - flow 1
+
 ![alt text](assets/unhappy1a.png)
 ![alt text](assets/unhappy1b.png)
 
-Unhappy path - flow 2
+#### Unhappy path - flow 2
+
 ![alt text](assets/unhappy2.png)
 
-Flow service structure schema
+#### Flow service structure schema
+
 ![alt text](assets/flowschema.png)
 
 ## Libraries / Tools Used
