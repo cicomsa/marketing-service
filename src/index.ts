@@ -1,4 +1,4 @@
-import express from 'express'
+import express from "express";
 import { EventEmitted } from "./types";
 import { send } from "./adapters/sendEmail";
 import { sendEmail } from "./actions/sendEmail";
@@ -17,7 +17,7 @@ app.on("eventEmitted", async (args: EventEmitted) => {
   const emailConfig = getEmailConfig(eventName);
 
   if (!emailConfig) {
-    console.log('Event is not an email action trigger');
+    console.log("Event is not an email action trigger");
     return;
   }
 
@@ -27,8 +27,8 @@ app.on("eventEmitted", async (args: EventEmitted) => {
   }
 
   emailConfig
-  .sort((a, b) => a.delayTime - b.delayTime)
-  .forEach((config) => sendEmail(send, config.delayTime, userEmail));
+    .sort((a, b) => a.delayTime - b.delayTime)
+    .forEach((config) => sendEmail(send, config.delayTime, userEmail));
 });
 
 app.get("/events", (req, res) => {
