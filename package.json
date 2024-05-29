@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "Service responsible for sending emails to customers",
   "scripts": {
-    "start": "tsx src/index.ts",
-    "test": "jest --detectOpenHandles",
+    "start": "tsx src/server.ts",
+    "test": "jest",
     "prettier": "npx prettier . --write"
   },
   "keywords": [],

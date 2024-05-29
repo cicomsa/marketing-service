@@ -1,4 +1,4 @@
-export const sendEmail = async (): Promise<boolean> => {
+export const send = async (): Promise<boolean> => {
   // Generate a random number between 0 and 1
   const randomNumber = Math.random();
 

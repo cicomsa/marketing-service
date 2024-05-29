@@ -1,10 +1,10 @@
-import express from "express";
+import express from 'express'
 import { EventEmitted } from "./types";
-import { sendEmail } from "./adapters/sendEmail";
+import { send } from "./adapters/sendEmail";
+import { sendEmail } from "./actions/sendEmail";
+import { getEmailConfig } from "./config/getEmailConfig";
 
 export const app = express();
-
-const port: number = 3000;
 
 app.on("eventEmitted", async (args: EventEmitted) => {
   const { userEmail, eventName } = args;
@@ -14,12 +14,21 @@ app.on("eventEmitted", async (args: EventEmitted) => {
     return;
   }
 
+  const emailConfig = getEmailConfig(eventName);
+
+  if (!emailConfig) {
+    console.log('Event is not an email action trigger');
+    return;
+  }
+
   if (!userEmail) {
     console.log("No email address was provided");
     return;
   }
 
-  sendEmail();
+  emailConfig
+  .sort((a, b) => a.delayTime - b.delayTime)
+  .forEach((config) => sendEmail(send, config.delayTime, userEmail));
 });
 
 app.get("/events", (req, res) => {
@@ -45,11 +54,3 @@ app.get("/events", (req, res) => {
     .json({ message: "Event was emitted succesfully" })
     .end();
 });
-
-const server = app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
-});
-
-export const closeServer = () => {
-  server.close();
-};
