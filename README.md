@@ -4,6 +4,8 @@
 
 Author: [Ioana Comsa](mailto:ioanacomsa85@gmail.com)
 
+[Video](https://www.loom.com/share/a8ec1027c2dd4418bbb8cb1201b3ffbf) overview on what to expect in the readme file and when running the application.
+
 ## Proposed Solution
 
 - We have a `GET` endpoint that takes the event name and the user email address as query params
@@ -45,20 +47,32 @@ Author: [Ioana Comsa](mailto:ioanacomsa85@gmail.com)
 
 #### Happy path - flow 1
 
+- An event is emitted when customer signs up on the website via an endpoint that includes event and user details in the query params
+- The event triggers an email communication to the customer and is sent with a delay time (for testing purposes 3000 miliseconds)
+
 ![alt text](assets/flow1a.png)
 ![alt text](assets/flow1b.png)
 
 #### Happy path - flow 2
+
+- An event is emitted when customer purchases socks via an endpoint that includes event and user details in the query params
+- The event triggers two email communications to the customer and are both sent with no delay time (for testing purposes 3000 miliseconds)
 
 ![alt text](assets/flow2a.png)
 ![alt text](assets/flow2b.png)
 
 #### Unhappy path - flow 1
 
+- Another event is emitted via an endpoint that includes event and user details in the query params
+- The event does not trigger any email communication to the customer
+
 ![alt text](assets/unhappy1a.png)
 ![alt text](assets/unhappy1b.png)
 
 #### Unhappy path - flow 2
+
+- An endpoint is accessed with no event and user details in the query params
+- No event is emitted
 
 ![alt text](assets/unhappy2.png)
 
