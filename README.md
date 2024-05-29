@@ -45,6 +45,9 @@ Author: [Ioana Comsa](mailto:ioanacomsa85@gmail.com)
 
 ## Screenshots
 
+- how the application behaves in the browser/postman
+- how the application behaves in the terminal
+
 #### Happy path - flow 1
 
 - An event is emitted when customer signs up on the website via an endpoint that includes event and user details in the query params
