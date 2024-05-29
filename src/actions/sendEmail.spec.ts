@@ -43,15 +43,15 @@ describe("sendEmail action", () => {
 
     expect(console.log).toHaveBeenNthCalledWith(
       1,
-      `awaiting ${delayTime} miliseconds`,
+      `Awaiting ${delayTime} miliseconds`,
     );
     expect(console.log).toHaveBeenNthCalledWith(
       2,
-      `sending email to ${userEmail}`,
+      `Sending email to ${userEmail}`,
     );
     expect(console.log).toHaveBeenNthCalledWith(
       3,
-      `email was succesfully sent to user with email ${userEmail}`,
+      `Email was succesfully sent to user with email ${userEmail}`,
     );
   });
 
@@ -69,15 +69,15 @@ describe("sendEmail action", () => {
 
     expect(console.log).toHaveBeenNthCalledWith(
       1,
-      `awaiting ${delayTime} miliseconds`,
+      `Awaiting ${delayTime} miliseconds`,
     );
     expect(console.log).toHaveBeenNthCalledWith(
       2,
-      `sending email to ${userEmail}`,
+      `Sending email to ${userEmail}`,
     );
     expect(console.log).toHaveBeenNthCalledWith(
       3,
-      `email failed to be sent to user with email ${userEmail}`,
+      `Email failed to be sent to user with email ${userEmail}`,
     );
   });
 });

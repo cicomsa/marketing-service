@@ -3,7 +3,7 @@ import { send } from "./sendEmail";
 jest.useFakeTimers();
 jest.spyOn(global, "setTimeout");
 
-describe("sendEmail", () => {
+describe("send email addapter", () => {
   afterEach(() => {
     jest.clearAllTimers();
     jest.clearAllMocks();

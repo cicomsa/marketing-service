@@ -32,7 +32,7 @@ app.on("eventEmitted", async (args: EventEmitted) => {
 });
 
 app.get("/events", (req, res) => {
-  const eventName = req.query.name;
+  const eventName = req.query.eventName;
   const userEmail = req.query.userEmail;
 
   if (!eventName || !userEmail) {

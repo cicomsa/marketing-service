@@ -58,7 +58,7 @@ describe("GET /events", () => {
 
       const response = await request(app)
         .get("/events")
-        .query({ name: eventName, userEmail });
+        .query({ eventName, userEmail });
 
       expect(response.status).toBe(200);
       expect(response.body).toEqual({
@@ -81,7 +81,7 @@ describe("GET /events", () => {
 
       const response = await request(app)
         .get("/events")
-        .query({ name: eventName, userEmail });
+        .query({ eventName, userEmail });
 
       expect(response.status).toBe(200);
       expect(response.body).toEqual({
